@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProjetMobile</string>
+
+    <string name="PlayButton">Jouer</string>
+    <string name="ScoreButton">Score</string>
+    <string name="AboutButton">A propos</string>
 </resources>
