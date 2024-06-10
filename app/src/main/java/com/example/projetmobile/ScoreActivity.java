@@ -28,8 +28,8 @@ public class ScoreActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        textView_NbScore = findViewById(R.id.textViewNbScore);
-        textView_DernierScore = findViewById(R.id.textViewDernierScore);
+        /*textView_NbScore = findViewById(R.id.textViewNbScore);
+        textView_DernierScore = findViewById(R.id.textViewDernierScore);*/
         scoreDao = new ScoreDao(new ScoreBaseHelper(this, "db", 1));
         Integer nbScore = (int) scoreDao.count();
         Score dernierScore = scoreDao.lastOrNull();
