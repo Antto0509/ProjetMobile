@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ProjectMobile</string>
+    <string name="PlayButton">Play</string>
+    <string name="ScoreButton">Score</string>
+    <string name="AboutButton">About</string>
+    <string name="AboutTitle">About</string>
+    <string name="AboutText">This application was made by Antoine COUTREEL and Antoine PISSON as part of a mobile development project.</string>
 </resources>

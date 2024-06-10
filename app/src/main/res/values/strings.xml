@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">ProjetMobile</string>
-
     <string name="PlayButton">Jouer</string>
     <string name="ScoreButton">Score</string>
     <string name="AboutButton">A propos</string>
+    <string name="AboutTitle">A propos</string>
+    <string name="AboutText">Cette application a été réalisée par Antoine COUTREEL et Antoine PISSON dans le cadre d\'un projet de développement mobile.</string>
 </resources>
