@@ -25,6 +25,7 @@
     <string name="NUMBER_8" translatable="false">8</string>
     <string name="NUMBER_9" translatable="false">9</string>
 
+    <!-- activity_score -->
     <string name="TEXT_TEXTVIEW_NB_SCORE">Il y a %1$d scores dans la base.</string>
     <string name="TEXT_TEXTVIEW_DERNIER_SCORE">Le dernier score est : %1$s</string>
 </resources>
