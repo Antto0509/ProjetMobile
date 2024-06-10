@@ -1,13 +1,30 @@
 <resources>
     <string name="app_name">ProjetMobile</string>
+
+    <!-- activity_play -->
     <string name="PlayButton">Jouer</string>
     <string name="ScoreButton">Score</string>
     <string name="AboutButton">A propos</string>
+
+    <!-- activity_about -->
     <string name="AboutTitle">A propos</string>
     <string name="AboutText">Cette application a été réalisée par Antoine COUTREEL et Antoine PISSON dans le cadre d\'un projet de développement mobile.</string>
     <string name="AboutTitleFeature">Liste des fonctionnalités</string>
     <string name="AboutTextFeature">- Jeu de calcul mental</string>
     <string name="AboutTextFeature2">- Score</string>
+
+    <!-- activity_play -->
+    <string name="NUMBER_0" translatable="false">0</string>
+    <string name="NUMBER_1" translatable="false">1</string>
+    <string name="NUMBER_2" translatable="false">2</string>
+    <string name="NUMBER_3" translatable="false">3</string>
+    <string name="NUMBER_4" translatable="false">4</string>
+    <string name="NUMBER_5" translatable="false">5</string>
+    <string name="NUMBER_6" translatable="false">6</string>
+    <string name="NUMBER_7" translatable="false">7</string>
+    <string name="NUMBER_8" translatable="false">8</string>
+    <string name="NUMBER_9" translatable="false">9</string>
+
     <string name="TEXT_TEXTVIEW_NB_SCORE">Il y a %1$d scores dans la base.</string>
     <string name="TEXT_TEXTVIEW_DERNIER_SCORE">Le dernier score est : %1$s</string>
 </resources>
