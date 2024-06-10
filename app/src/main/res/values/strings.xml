@@ -5,4 +5,7 @@
     <string name="AboutButton">A propos</string>
     <string name="AboutTitle">A propos</string>
     <string name="AboutText">Cette application a été réalisée par Antoine COUTREEL et Antoine PISSON dans le cadre d\'un projet de développement mobile.</string>
+    <string name="AboutTitleFeature">Liste des fonctionnalités</string>
+    <string name="AboutTextFeature">- Jeu de calcul mental</string>
+    <string name="AboutTextFeature2">- Score</string>
 </resources>
