@@ -8,4 +8,6 @@
     <string name="AboutTitleFeature">Liste des fonctionnalités</string>
     <string name="AboutTextFeature">- Jeu de calcul mental</string>
     <string name="AboutTextFeature2">- Score</string>
+    <string name="TEXT_TEXTVIEW_NB_SCORE">Il y a %1$d scores dans la base.</string>
+    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">Le dernier score est : %1$s</string>
 </resources>

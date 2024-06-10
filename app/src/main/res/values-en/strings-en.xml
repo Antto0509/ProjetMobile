@@ -9,4 +9,6 @@
     <string name="AboutTitleFeature">List of features</string>
     <string name="AboutTextFeature">- Mental calculation game</string>
     <string name="AboutTextFeature2">- Score</string>
+    <string name="TEXT_TEXTVIEW_NB_SCORE">There are %1$d scores in the database.</string>
+    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">The last score is: %1$s</string>
 </resources>
