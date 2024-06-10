@@ -32,10 +32,20 @@
             tools:textAlignment="center">
 
             <TextView
+                android:id="@+id/textView_Calculation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:textAlignment="center"
+                tools:textSize="24sp" />
+
+            <TextView
                 android:id="@+id/textView_Result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                tools:layout_marginTop="40sp"
+                tools:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,21 +62,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_7"
+                    android:id="@+id/btn_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_7"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_8"
+                    android:id="@+id/btn_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_8"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_9"
+                    android:id="@+id/btn_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_9"
@@ -80,21 +90,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_4"
+                    android:id="@+id/btn_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_4"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_5"
+                    android:id="@+id/btn_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_5"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_6"
+                    android:id="@+id/btn_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_6"
@@ -108,21 +118,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_1"
+                    android:id="@+id/btn_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_1"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_2"
+                    android:id="@+id/btn_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_2"
                     tools:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/button_3"
+                    android:id="@+id/btn_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_3"
@@ -136,7 +146,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_0"
+                    android:id="@+id/btn_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/NUMBER_0" />
