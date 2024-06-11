@@ -17,7 +17,7 @@
     <string name="NUMBER_7" translatable="false">7</string>
     <string name="NUMBER_8" translatable="false">8</string>
     <string name="NUMBER_9" translatable="false">9</string>
-    <string name="Comma" translatable="false">,</string>
+    <string name="Comma" translatable="false">.</string>
 
     <string name="Delete" translatable="false">×</string>
     <string name="Validate" translatable="false">✓</string>

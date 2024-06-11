@@ -33,7 +33,7 @@ public class PlayActivity extends AppCompatActivity {
 
     // Valeur minimale et maximale générée pour un calcul
     private int min = 1;
-    private int max = 100;
+    private int max = 20;
     // Valeurs composant le calcul à résoudre
     private int firstNumber;
     private int secondNumber;
@@ -65,6 +65,7 @@ public class PlayActivity extends AppCompatActivity {
         button_9 = findViewById(R.id.btn_9);
         button_comma = findViewById(R.id.btn_comma);
         button_delete = findViewById(R.id.btn_delete);
+        button_validate = findViewById(R.id.btn_validate);
 
         button_0.setOnClickListener(view -> addValue("0"));
         button_1.setOnClickListener(view -> addValue("1"));
@@ -78,6 +79,7 @@ public class PlayActivity extends AppCompatActivity {
         button_9.setOnClickListener(view -> addValue("9"));
         button_comma.setOnClickListener(view -> addValue(","));
         button_delete.setOnClickListener(view -> deleteCalculation());
+        button_validate.setOnClickListener(view -> showCalculationResult());
 
         generateCalculation();
     }
@@ -109,6 +111,34 @@ public class PlayActivity extends AppCompatActivity {
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
     }
 
+    private void showCalculationResult(){
+        double result;
+        switch (operator) {
+            case "+":
+                result = firstNumber + secondNumber;
+                break;
+            case "-":
+                result = firstNumber - secondNumber;
+                break;
+            case "x":
+                result = firstNumber * secondNumber;
+                break;
+            case "/":
+                if (secondNumber != 0) {
+                    result = (double) firstNumber / secondNumber;
+                } else {
+                    textViewCalculation.setText("Erreur: Division par zéro");
+                    return;
+                }
+                break;
+            default:
+                textViewCalculation.setText("Opérateur inconnu");
+                return;
+        }
+        String formattedResult = String.format("%.2f", result);
+        textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber + " = " + formattedResult);
+    }
+
     // Ajouter le chiffre au clique sur le clavier numérique
     private void addValue(String number){
         textViewResult.setText(textViewResult.getText()+number);
@@ -117,6 +147,7 @@ public class PlayActivity extends AppCompatActivity {
     private void deleteCalculation(){
         textViewResult.setText("");
     }
+
 
     /*
     RAF :
