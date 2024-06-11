@@ -148,7 +148,6 @@ public class PlayActivity extends AppCompatActivity {
         textViewResult.setText("");
     }
 
-
     /*
     RAF :
     - RECUPERER LE RESULAT DU CALCUL
