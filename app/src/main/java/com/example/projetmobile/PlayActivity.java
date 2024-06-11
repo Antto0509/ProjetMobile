@@ -93,7 +93,11 @@ public class PlayActivity extends AppCompatActivity {
         firstNumber = getRandomNumber(min, max);
         secondNumber = getRandomNumber(min, max);
         operator = getRandomOperator();
-        textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
+        if (firstNumber >= secondNumber){
+            textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
+        } else{
+            textViewCalculation.setText(secondNumber + " " + operator + " " + firstNumber);
+        }
     }
 
     // Ajouter le chiffre au clique sur le clavier numérique

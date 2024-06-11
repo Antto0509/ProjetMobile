@@ -2,9 +2,15 @@
 <resources>
     <string name="app_name">ProjectMobile</string>
 
-    <!-- activity_play -->
+    <!-- activity_main -->
     <string name="PlayButton">Play</string>
     <string name="ScoreButton">Score</string>
+
+    <!-- activity_play -->
+
+    <!-- activity_score -->
+    <string name="TEXT_TEXTVIEW_NB_SCORE">There are %1$d scores in the database.</string>
+    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">The last score is: %1$s</string>
 
     <!-- activity_about -->
     <string name="AboutButton">About</string>
@@ -13,8 +19,4 @@
     <string name="AboutTitleFeature">List of features</string>
     <string name="AboutTextFeature">- Mental calculation game</string>
     <string name="AboutTextFeature2">- Score</string>
-
-    <!-- activity_score -->
-    <string name="TEXT_TEXTVIEW_NB_SCORE">There are %1$d scores in the database.</string>
-    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">The last score is: %1$s</string>
 </resources>
