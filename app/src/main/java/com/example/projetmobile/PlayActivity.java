@@ -27,6 +27,10 @@ public class PlayActivity extends AppCompatActivity {
     private Button button_7;
     private Button button_8;
     private Button button_9;
+    private Button button_comma;
+    private Button button_delete;
+    private Button button_validate;
+
     // Valeur minimale et maximale générée pour un calcul
     private int min = 1;
     private int max = 100;
@@ -59,17 +63,21 @@ public class PlayActivity extends AppCompatActivity {
         button_7 = findViewById(R.id.btn_7);
         button_8 = findViewById(R.id.btn_8);
         button_9 = findViewById(R.id.btn_9);
+        button_comma = findViewById(R.id.btn_comma);
+        button_delete = findViewById(R.id.btn_delete);
 
-        button_0.setOnClickListener(view -> addNumber("0"));
-        button_1.setOnClickListener(view -> addNumber("1"));
-        button_2.setOnClickListener(view -> addNumber("2"));
-        button_3.setOnClickListener(view -> addNumber("3"));
-        button_4.setOnClickListener(view -> addNumber("4"));
-        button_5.setOnClickListener(view -> addNumber("5"));
-        button_6.setOnClickListener(view -> addNumber("6"));
-        button_7.setOnClickListener(view -> addNumber("7"));
-        button_8.setOnClickListener(view -> addNumber("8"));
-        button_9.setOnClickListener(view -> addNumber("9"));
+        button_0.setOnClickListener(view -> addValue("0"));
+        button_1.setOnClickListener(view -> addValue("1"));
+        button_2.setOnClickListener(view -> addValue("2"));
+        button_3.setOnClickListener(view -> addValue("3"));
+        button_4.setOnClickListener(view -> addValue("4"));
+        button_5.setOnClickListener(view -> addValue("5"));
+        button_6.setOnClickListener(view -> addValue("6"));
+        button_7.setOnClickListener(view -> addValue("7"));
+        button_8.setOnClickListener(view -> addValue("8"));
+        button_9.setOnClickListener(view -> addValue("9"));
+        button_comma.setOnClickListener(view -> addValue(","));
+        button_delete.setOnClickListener(view -> deleteCalculation());
 
         generateCalculation();
     }
@@ -93,22 +101,28 @@ public class PlayActivity extends AppCompatActivity {
         firstNumber = getRandomNumber(min, max);
         secondNumber = getRandomNumber(min, max);
         operator = getRandomOperator();
-        if (firstNumber >= secondNumber){
-            textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
-        } else{
-            textViewCalculation.setText(secondNumber + " " + operator + " " + firstNumber);
+        if (firstNumber < secondNumber){
+            int save = firstNumber;
+            firstNumber = secondNumber;
+            secondNumber = save;
         }
+        textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
     }
 
     // Ajouter le chiffre au clique sur le clavier numérique
-    private void addNumber(String number){
+    private void addValue(String number){
         textViewResult.setText(textViewResult.getText()+number);
     }
 
+    private void deleteCalculation(){
+        textViewResult.setText("");
+    }
+
     /*
-
-    TRAITER LE RESULTAT DU CALCUL AU DIXIEME PRES
-
+    RAF :
+    - RECUPERER LE RESULAT DU CALCUL
+    - TRAITER LE RESULTAT DU CALCUL (AU CENTIEME PRES)
+    - CHANGER DE CALCUL
      */
 
 }
