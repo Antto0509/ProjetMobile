@@ -80,6 +80,7 @@ public class PlayActivity extends AppCompatActivity {
         return random.nextInt((max - min) + 1) + min;
     }
 
+    // Générer un opérateur aléatoire
     public String getRandomOperator() {
         String[] operators = {"+", "-", "x", "/"};
         Random random = new Random();
@@ -103,7 +104,6 @@ public class PlayActivity extends AppCompatActivity {
     /*
 
     TRAITER LE RESULTAT DU CALCUL AU DIXIEME PRES
-
 
      */
 
