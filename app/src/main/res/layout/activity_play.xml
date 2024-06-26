@@ -37,19 +37,19 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/img_heart1"
                         android:layout_width="54dp"
                         android:layout_height="47dp"
                         app:srcCompat="@drawable/heart" />
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/img_heart2"
                         android:layout_width="54dp"
                         android:layout_height="47dp"
                         app:srcCompat="@drawable/heart" />
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/img_heart3"
                         android:layout_width="54dp"
                         android:layout_height="47dp"
                         app:srcCompat="@drawable/heart" />

@@ -86,7 +86,7 @@ public class PlayActivity extends AppCompatActivity {
         button_7.setOnClickListener(view -> addValue("7"));
         button_8.setOnClickListener(view -> addValue("8"));
         button_9.setOnClickListener(view -> addValue("9"));
-        button_comma.setOnClickListener(view -> addValue(","));
+        button_comma.setOnClickListener(view -> addValue("."));
         button_delete.setOnClickListener(view -> deleteCalculation());
         button_validate.setOnClickListener(view -> getCalculationResult());
 
