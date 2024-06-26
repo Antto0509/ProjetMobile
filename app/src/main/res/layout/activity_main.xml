@@ -20,18 +20,24 @@
             android:id="@+id/PlayButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/PlayButton" />
+            android:text="@string/PlayButton"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/ScoreButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ScoreButton" />
+            android:text="@string/ScoreButton"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/AboutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/AboutButton" />
+            android:text="@string/AboutButton"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
