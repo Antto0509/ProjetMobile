@@ -1,5 +1,6 @@
 package com.example.projetmobile;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -15,9 +16,10 @@ import com.example.projetmobile.entities.Score;
 
 public class ScoreActivity extends AppCompatActivity {
     private ScoreDao scoreDao;
-    private TextView textView_NbScore;
-    private TextView textView_DernierScore;
+    private TextView bestScore;
+    private TextView scores;
 
+    @SuppressLint("StringFormatInvalid")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +30,30 @@ public class ScoreActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        /*textView_NbScore = findViewById(R.id.textViewNbScore);
-        textView_DernierScore = findViewById(R.id.textViewDernierScore);*/
+
+        // Objectif de cette page : afficher le meilleur score puis la liste des scores (avec pseudo) enregistrés
+
+        // On récupère les textViews
+        bestScore = findViewById(R.id.textHighScore);
+        scores = findViewById(R.id.textScores);
+
+        // On récupère le meilleur score (🌟 pseudo : score 🌟)
         scoreDao = new ScoreDao(new ScoreBaseHelper(this, "db", 1));
-        Integer nbScore = (int) scoreDao.count();
-        Score dernierScore = scoreDao.lastOrNull();
-        if (dernierScore != null) {
-            String scoreFormat = dernierScore.getScore()
-                    + " " + dernierScore.getPseudo();
-            textView_DernierScore.setText(String.format(getString(R.string.TEXT_TEXTVIEW_DERNIER_SCORE), scoreFormat));
+        Score best = scoreDao.getBestScore();
+        if (best != null) {
+            String HighScoreFormat = "🌟 " + best.getPseudo() + " : " + best.getScore() + " points 🌟";
+            bestScore.setText(String.format(getString(R.string.HighScore), HighScoreFormat));
+        } else {
+            bestScore.setText(String.format(getString(R.string.HighScore), "Aucun score enregistré"));
         }
-        textView_NbScore.setText(String.format(getString(R.string.TEXT_TEXTVIEW_NB_SCORE), nbScore));
+
+        // On récupère la liste des scores
+        StringBuilder scoresList = new StringBuilder();
+        Integer i = 1;
+        for (Score score : scoreDao.getScores()) {
+            String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n";
+            scoresList.append(scoresFormat);
+            i++;
+        }
     }
 }

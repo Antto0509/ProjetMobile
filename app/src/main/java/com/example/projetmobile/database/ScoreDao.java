@@ -5,7 +5,9 @@ import android.database.Cursor;
 
 import com.example.projetmobile.entities.Score;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ScoreDao extends BaseDao<Score> {
     public static final String tableName = "lstScore";

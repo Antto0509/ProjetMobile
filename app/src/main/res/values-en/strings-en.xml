@@ -9,8 +9,8 @@
     <!-- activity_play -->
 
     <!-- activity_score -->
-    <string name="TEXT_TEXTVIEW_NB_SCORE">There are %1$d scores in the database.</string>
-    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">The last score is: %1$s</string>
+    <string name="ScoreTitle">Score</string>
+    <string name="ListScoreTitle">List of scores</string>
 
     <!-- activity_about -->
     <string name="AboutButton">About</string>

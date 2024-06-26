@@ -26,8 +26,11 @@
     <string name="Validate" translatable="false">✓</string>
 
     <!-- activity_score -->
-    <string name="TEXT_TEXTVIEW_NB_SCORE">Il y a %1$d scores dans la base.</string>
-    <string name="TEXT_TEXTVIEW_DERNIER_SCORE">Le dernier score est : %1$s</string>
+    <string name="ScoreTitle">Score</string>
+    <string name="HighScore" translatable="false">0</string>
+    <string name="ListScoreTitle">Liste des scores</string>
+    <string name="ActivityScoreText" translatable="false">0</string>
+
 
     <!-- activity_about -->
     <string name="AboutTitle">A propos</string>
