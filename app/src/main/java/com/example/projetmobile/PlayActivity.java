@@ -168,9 +168,6 @@ public class PlayActivity extends AppCompatActivity {
         DecimalFormat df = new DecimalFormat("#.##");
         String formattedResult = df.format(result);
 
-        textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber + " = " + formattedResult);
-
-
         // Retourner la valeur formatée en tant que double
         return Double.parseDouble(formattedResult);
     }
@@ -210,12 +207,6 @@ public class PlayActivity extends AppCompatActivity {
         generateCalculation();
         deleteCalculation();
     }
-
-    // Marquer un temps d'arrêt de 3 secondes
-    /*private void timePause(Runnable task) {
-        Utils.waitAndExecute(3000, task);
-    }*/
-
 
     /*
     NOTES PERSO :
