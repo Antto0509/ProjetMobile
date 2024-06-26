@@ -104,6 +104,13 @@ public class PlayActivity extends AppCompatActivity {
         button_validate.setOnClickListener(view -> validateCalculation());
 
         generateCalculation();
+        updateValidationButtonState();
+    }
+
+    // Désactiver le bouton de validation si aucun résultat n'est saisi
+    public void updateValidationButtonState(){
+        String resultText = textViewResult.getText().toString().trim();
+        button_validate.setEnabled(!resultText.isEmpty());
     }
 
     // Générer un nombre aléatoire
@@ -136,11 +143,13 @@ public class PlayActivity extends AppCompatActivity {
     // Ajouter le chiffre au clique sur le clavier numérique
     private void addValue(String number){
         textViewResult.setText(textViewResult.getText()+number);
+        updateValidationButtonState();
     }
 
     // Supprimer le calcul saisi
     private void deleteCalculation(){
         textViewResult.setText("");
+        updateValidationButtonState();
     }
 
     // Récupérer le résultat du calcul généré
