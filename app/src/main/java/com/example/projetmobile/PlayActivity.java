@@ -101,7 +101,7 @@ public class PlayActivity extends AppCompatActivity {
         button_9.setOnClickListener(view -> addValue("9"));
         button_comma.setOnClickListener(view -> addValue("."));
         button_delete.setOnClickListener(view -> deleteCalculation());
-        button_validate.setOnClickListener(view -> getCalculationResult());
+        button_validate.setOnClickListener(view -> validateCalculation());
 
         generateCalculation();
     }
@@ -143,6 +143,12 @@ public class PlayActivity extends AppCompatActivity {
         textViewResult.setText("");
     }
 
+    // Actions à réaliser lors de la validation du calcul
+    private void validateCalculation(){
+        double result = getCalculationResult();
+        CheckAnswer(result);
+    }
+
     // Récupérer le résultat du calcul généré
     private double getCalculationResult(){
         double result;
@@ -170,7 +176,6 @@ public class PlayActivity extends AppCompatActivity {
 
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber + " = " + formattedResult);
 
-        CheckAnswer(Double.parseDouble(formattedResult));
 
         // Retourner la valeur formatée en tant que double
         return Double.parseDouble(formattedResult);
@@ -208,10 +213,14 @@ public class PlayActivity extends AppCompatActivity {
     /*private void timePause(Runnable task) {
         Utils.waitAndExecute(3000, task);
     }*/
+
     /*
+    NOTES PERSO :
     RAF :
     - VERIFIER SI LA CALCUL USER = BON RESULTAT
     - CHANGER DE CALCUL
+
+    résultat arrondi au centieme près. pour 2.857, res = 2.86
      */
 
 }
