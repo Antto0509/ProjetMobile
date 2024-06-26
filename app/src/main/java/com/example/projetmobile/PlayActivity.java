@@ -18,7 +18,6 @@ import android.os.Looper;
 
 public class PlayActivity extends AppCompatActivity {
     // TextView pour le score, les calculs générés et la saisie
-    private TextView textViewScore;
     private TextView textViewScoreValue;
     private TextView textViewCalculation;
     private TextView textViewResult;
@@ -40,6 +39,9 @@ public class PlayActivity extends AppCompatActivity {
     // Valeur minimale et maximale générée pour un calcul
     private int min = 1;
     private int max = 20;
+    // Score et points de vie
+    private int score = 0;
+    private int lifePoint = 3;
     // Valeurs composant le calcul à résoudre
     private int firstNumber;
     private int secondNumber;
@@ -56,7 +58,6 @@ public class PlayActivity extends AppCompatActivity {
             return insets;
         });
 
-        textViewScore = findViewById(R.id.textView_Score);
         textViewScoreValue = findViewById(R.id.textView_ScoreValue);
         textViewCalculation = findViewById(R.id.textView_Calculation);
         textViewResult = findViewById(R.id.textView_Result);
@@ -119,6 +120,17 @@ public class PlayActivity extends AppCompatActivity {
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
     }
 
+    // Ajouter le chiffre au clique sur le clavier numérique
+    private void addValue(String number){
+        textViewResult.setText(textViewResult.getText()+number);
+    }
+
+    // Supprimer le calcul saisi
+    private void deleteCalculation(){
+        textViewResult.setText("");
+    }
+
+    // Récupérer le résultat du calcul généré
     private double getCalculationResult(){
         double result;
         switch (operator) {
@@ -145,23 +157,34 @@ public class PlayActivity extends AppCompatActivity {
 
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber + " = " + formattedResult);
 
+        CheckAnswer(Double.parseDouble(formattedResult));
+
         // Retourner la valeur formatée en tant que double
         return Double.parseDouble(formattedResult);
     }
 
-    // Ajouter le chiffre au clique sur le clavier numérique
-    private void addValue(String number){
-        textViewResult.setText(textViewResult.getText()+number);
+    // Vérifier l
+    private void CheckAnswer(double result){
+        String userInput = textViewResult.getText().toString().trim();
+        double userResult = Double.parseDouble(userInput);
+
+        // Si l'utilisateur a bien répondu au calcul
+        if(Double.compare(result, userResult) == 0){
+            score++;
+            textViewScoreValue.setText(String.valueOf(score));
+        }
+        else{
+            lifePoint--;
+        }
     }
 
-    // Supprimer le calcul saisi
-    private void deleteCalculation(){
-        textViewResult.setText("");
-    }
-
+    // Marquer un temps d'arrêt de 3 secondes
+    /*private void timePause(Runnable task) {
+        Utils.waitAndExecute(3000, task);
+    }*/
     /*
     RAF :
-    - TRAITER LE RESULTAT DU CALCUL (AU CENTIEME PRES)
+    - VERIFIER SI LA CALCUL USER = BON RESULTAT
     - CHANGER DE CALCUL
      */
 
