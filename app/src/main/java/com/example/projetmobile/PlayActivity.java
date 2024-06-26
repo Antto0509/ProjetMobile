@@ -11,9 +11,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Random;
+import java.text.DecimalFormat;
+
+import android.os.Handler;
+import android.os.Looper;
 
 public class PlayActivity extends AppCompatActivity {
-    // TextView pour les calculs générés et la saisie
+    // TextView pour le score, les calculs générés et la saisie
+    private TextView textViewScore;
+    private TextView textViewScoreValue;
     private TextView textViewCalculation;
     private TextView textViewResult;
     // Boutons de saisies
@@ -50,6 +56,8 @@ public class PlayActivity extends AppCompatActivity {
             return insets;
         });
 
+        textViewScore = findViewById(R.id.textView_Score);
+        textViewScoreValue = findViewById(R.id.textView_ScoreValue);
         textViewCalculation = findViewById(R.id.textView_Calculation);
         textViewResult = findViewById(R.id.textView_Result);
 
@@ -79,7 +87,7 @@ public class PlayActivity extends AppCompatActivity {
         button_9.setOnClickListener(view -> addValue("9"));
         button_comma.setOnClickListener(view -> addValue(","));
         button_delete.setOnClickListener(view -> deleteCalculation());
-        button_validate.setOnClickListener(view -> showCalculationResult());
+        button_validate.setOnClickListener(view -> getCalculationResult());
 
         generateCalculation();
     }
@@ -111,7 +119,7 @@ public class PlayActivity extends AppCompatActivity {
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber);
     }
 
-    private void showCalculationResult(){
+    private double getCalculationResult(){
         double result;
         switch (operator) {
             case "+":
@@ -124,19 +132,21 @@ public class PlayActivity extends AppCompatActivity {
                 result = firstNumber * secondNumber;
                 break;
             case "/":
-                if (secondNumber != 0) {
-                    result = (double) firstNumber / secondNumber;
-                } else {
-                    textViewCalculation.setText("Erreur: Division par zéro");
-                    return;
-                }
+                result = (double) firstNumber / secondNumber;
                 break;
             default:
                 textViewCalculation.setText("Opérateur inconnu");
-                return;
+                return 0;
         }
-        String formattedResult = String.format("%.2f", result);
+
+        // Formater le résultat pour avoir au maximum deux chiffres après la virgule
+        DecimalFormat df = new DecimalFormat("#.##");
+        String formattedResult = df.format(result);
+
         textViewCalculation.setText(firstNumber + " " + operator + " " + secondNumber + " = " + formattedResult);
+
+        // Retourner la valeur formatée en tant que double
+        return Double.parseDouble(formattedResult);
     }
 
     // Ajouter le chiffre au clique sur le clavier numérique
@@ -144,13 +154,13 @@ public class PlayActivity extends AppCompatActivity {
         textViewResult.setText(textViewResult.getText()+number);
     }
 
+    // Supprimer le calcul saisi
     private void deleteCalculation(){
         textViewResult.setText("");
     }
 
     /*
     RAF :
-    - RECUPERER LE RESULAT DU CALCUL
     - TRAITER LE RESULTAT DU CALCUL (AU CENTIEME PRES)
     - CHANGER DE CALCUL
      */
