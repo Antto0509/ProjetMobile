@@ -13,7 +13,6 @@ public class ScoreDao extends BaseDao<Score> {
     public static final String tableName = "lstScore";
     public static final String score = "score";
     public static final String pseudo = "pseudo";
-    public static final Date date = new Date();
 
     public ScoreDao(ScoreBaseHelper helper) {
         super(helper);
@@ -21,7 +20,7 @@ public class ScoreDao extends BaseDao<Score> {
 
     @Override
     protected String getTableName() {
-        return null;
+        return tableName;
     }
 
     @Override

@@ -54,48 +54,20 @@ public abstract class BaseDao<T extends BaseEntity> {
         return items;
     }
 
-    // Dernier score
-    public T lastOrNull() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        Cursor cursor =db.query(
-                getTableName(),
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
-
-        cursor.moveToLast();
-        T last = this.getEntity(cursor);
-        cursor.close();
-
-        return last;
-    }
-
-    // Compter le nombre de scores
-    public long count() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("select count(*) from " + getTableName(), null);
-        cursor.moveToFirst();
-        int count= cursor.getInt(0);
-        cursor.close();
-
-        return count;
-    }
-
     // Meilleur score
     public T getBestScore() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select max(score), pseudo from " + getTableName(), null);
-        cursor.moveToFirst();
-        T best = this.getEntity(cursor);
+        Cursor cursor = db.rawQuery("select pseudo, score from " + getTableName() + " order by score desc limit 1", null);
+
+        if (!cursor.moveToFirst()) {
+            return null;
+        }
+
+        T score = this.getEntity(cursor);
         cursor.close();
 
-        return best;
+        return score;
     }
 
     // Liste des scores
@@ -103,7 +75,8 @@ public abstract class BaseDao<T extends BaseEntity> {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("select pseudo, score from " + getTableName() + " order by score desc", null);
-        List<T> items = new ArrayList<>();
+
+        List items = new ArrayList<T>();
         while(cursor.moveToNext()) {
             items.add(getEntity(cursor));
         }

@@ -27,9 +27,9 @@
 
     <!-- activity_score -->
     <string name="ScoreTitle">Score</string>
-    <string name="HighScore" translatable="false">0</string>
+    <string name="HighScore" translatable="false">%1$v</string>
     <string name="ListScoreTitle">Liste des scores</string>
-    <string name="ActivityScoreText" translatable="false">0</string>
+    <string name="ActivityScoreText" translatable="false">%1$v</string>
 
 
     <!-- activity_about -->

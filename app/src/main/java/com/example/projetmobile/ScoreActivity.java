@@ -19,7 +19,6 @@ public class ScoreActivity extends AppCompatActivity {
     private TextView bestScore;
     private TextView scores;
 
-    @SuppressLint("StringFormatInvalid")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,23 +36,28 @@ public class ScoreActivity extends AppCompatActivity {
         bestScore = findViewById(R.id.textHighScore);
         scores = findViewById(R.id.textScores);
 
-        // On récupère le meilleur score (🌟 pseudo : score 🌟)
+        // On récupère le meilleur score
         scoreDao = new ScoreDao(new ScoreBaseHelper(this, "db", 1));
         Score best = scoreDao.getBestScore();
         if (best != null) {
             String HighScoreFormat = "🌟 " + best.getPseudo() + " : " + best.getScore() + " points 🌟";
             bestScore.setText(String.format(getString(R.string.HighScore), HighScoreFormat));
         } else {
-            bestScore.setText(String.format(getString(R.string.HighScore), "Aucun score enregistré"));
+            bestScore.setText("Aucun score enregistré");
         }
 
         // On récupère la liste des scores
         StringBuilder scoresList = new StringBuilder();
         Integer i = 1;
-        for (Score score : scoreDao.getScores()) {
-            String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n";
-            scoresList.append(scoresFormat);
-            i++;
+        if (scoreDao.getScores().isEmpty()) {
+            scoresList.append("Aucun score enregistré");
+        } else {
+            for (Score score : scoreDao.getScores()) {
+                String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n";
+                scoresList.append(scoresFormat);
+                i++;
+            }
         }
+        scores.setText(scoresList.toString());
     }
 }
