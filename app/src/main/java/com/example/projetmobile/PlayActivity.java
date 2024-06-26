@@ -1,7 +1,9 @@
 package com.example.projetmobile;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Random;
 import java.text.DecimalFormat;
+
+import android.view.View;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -46,6 +50,11 @@ public class PlayActivity extends AppCompatActivity {
     private int firstNumber;
     private int secondNumber;
     private String operator;
+    // Gestion des images
+    private ImageView image_heart1;
+    private ImageView image_heart2;
+    private ImageView image_heart3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +84,10 @@ public class PlayActivity extends AppCompatActivity {
         button_comma = findViewById(R.id.btn_comma);
         button_delete = findViewById(R.id.btn_delete);
         button_validate = findViewById(R.id.btn_validate);
+
+        image_heart1 = findViewById(R.id.img_heart1);
+        image_heart2 = findViewById(R.id.img_heart2);
+        image_heart3 = findViewById(R.id.img_heart3);
 
         button_0.setOnClickListener(view -> addValue("0"));
         button_1.setOnClickListener(view -> addValue("1"));
@@ -174,6 +187,19 @@ public class PlayActivity extends AppCompatActivity {
             textViewScoreValue.setText(String.valueOf(score));
         }
         else{
+            switch (lifePoint) {
+                case 3:
+                    image_heart3.setVisibility(View.INVISIBLE);
+                    break;
+                case 2:
+                    image_heart2.setVisibility(View.INVISIBLE);
+                    break;
+                case 1:
+                    image_heart1.setVisibility(View.INVISIBLE);
+                    break;
+                default:
+
+            }
             lifePoint--;
         }
     }
