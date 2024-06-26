@@ -143,12 +143,6 @@ public class PlayActivity extends AppCompatActivity {
         textViewResult.setText("");
     }
 
-    // Actions à réaliser lors de la validation du calcul
-    private void validateCalculation(){
-        double result = getCalculationResult();
-        CheckAnswer(result);
-    }
-
     // Récupérer le résultat du calcul généré
     private double getCalculationResult(){
         double result;
@@ -203,10 +197,18 @@ public class PlayActivity extends AppCompatActivity {
                     image_heart1.setVisibility(View.INVISIBLE);
                     break;
                 default:
-
+                    // AFFICHER ICI MESSAGE DE FIN DE PARTIE ET ENREGISTRER SCORE EN BD
             }
             lifePoint--;
         }
+    }
+
+    // Actions à réaliser lors de la validation du calcul
+    private void validateCalculation(){
+        double result = getCalculationResult();
+        CheckAnswer(result);
+        generateCalculation();
+        deleteCalculation();
     }
 
     // Marquer un temps d'arrêt de 3 secondes
@@ -223,5 +225,4 @@ public class PlayActivity extends AppCompatActivity {
 
     résultat arrondi au centieme près. pour 2.857, res = 2.86
      */
-
 }
