@@ -1,5 +1,6 @@
 package com.example.projetmobile;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
@@ -206,9 +207,12 @@ public class PlayActivity extends AppCompatActivity {
                 case 1:
                     image_heart1.setVisibility(View.INVISIBLE);
                     break;
-                default:
+                case 0:
                     // AFFICHER ICI MESSAGE DE FIN DE PARTIE ET ENREGISTRER SCORE EN BD
                     saveScoreToDatabase();
+                    break;
+                default:
+
             }
             lifePoint--;
         }
@@ -223,20 +227,18 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     private void saveScoreToDatabase() {
-        // Créer un objet Score avec le pseudo de l'utilisateur et le score actuel
+        // Création un objet Score avec le pseudo de l'utilisateur et le score actuel
         Score scoreEntity = new Score();
-        scoreEntity.setPseudo("Player"); // Remplacez par la méthode pour obtenir le pseudo de l'utilisateur
+        scoreEntity.setPseudo("Player");
         scoreEntity.setScore(score);
 
         // Insérer le score dans la base de données
         scoreDao.create(scoreEntity);
 
-        // Afficher un message ou rediriger vers une autre activité si nécessaire
-        // Par exemple :
-        // Toast.makeText(this, "Game Over! Score saved.", Toast.LENGTH_SHORT).show();
-        // Intent intent = new Intent(this, GameOverActivity.class);
-        // startActivity(intent);
-        // finish();
+        // Redirection vers ScoreActivity
+        Intent intent = new Intent(PlayActivity.this, ScoreActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     /*
