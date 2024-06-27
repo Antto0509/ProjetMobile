@@ -102,6 +102,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:textAlignment="center">
@@ -128,9 +129,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingBottom="20dp"
             tools:gravity="bottom">
 
             <LinearLayout
