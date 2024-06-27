@@ -150,7 +150,12 @@ public class PlayActivity extends AppCompatActivity {
 
     // Ajouter le chiffre au clique sur le clavier numérique
     private void addValue(String number){
-        textViewResult.setText(textViewResult.getText()+number);
+        String currentText = textViewResult.getText().toString();
+
+        // Vérifier si la longueur actuelle plus le nouveau caractère dépasse 12
+        if (currentText.length() < 12) {
+            textViewResult.setText(currentText + number);
+        }
         updateValidationButtonState();
     }
 
