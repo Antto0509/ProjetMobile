@@ -42,7 +42,7 @@
             android:padding="15dp"
             android:text="@string/AboutText"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textViewTitleFeature"
@@ -53,7 +53,7 @@
             android:padding="15dp"
             android:text="@string/AboutTitleFeature"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/textViewFeature1"
@@ -64,7 +64,7 @@
             android:paddingEnd="15dp"
             android:text="@string/AboutTextFeature"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textViewFeature2"
@@ -76,7 +76,7 @@
             android:paddingEnd="15dp"
             android:text="@string/AboutTextFeature2"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
