@@ -1,5 +1,6 @@
 package com.example.projetmobile;
 
+import android.util.Log;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Random;
 import java.text.DecimalFormat;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import android.view.View;
 
@@ -158,20 +161,28 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     // Récupérer le résultat du calcul généré
-    private double getCalculationResult(){
-        double result;
+    private double getCalculationResult() {
+        BigDecimal result;
+        BigDecimal first = BigDecimal.valueOf(firstNumber);
+        BigDecimal second = BigDecimal.valueOf(secondNumber);
+
         switch (operator) {
             case "+":
-                result = firstNumber + secondNumber;
+                result = first.add(second);
                 break;
             case "-":
-                result = firstNumber - secondNumber;
+                result = first.subtract(second);
                 break;
             case "x":
-                result = firstNumber * secondNumber;
+                result = first.multiply(second);
                 break;
             case "/":
-                result = (double) firstNumber / secondNumber;
+                // Si le second nombre est zéro, éviter la division par zéro
+                if (second.compareTo(BigDecimal.ZERO) == 0) {
+                    textViewCalculation.setText("Division par zéro");
+                    return 0;
+                }
+                result = first.divide(second, 2, RoundingMode.HALF_UP);
                 break;
             default:
                 textViewCalculation.setText("Opérateur inconnu");
@@ -179,8 +190,7 @@ public class PlayActivity extends AppCompatActivity {
         }
 
         // Formater le résultat pour avoir au maximum deux chiffres après la virgule
-        DecimalFormat df = new DecimalFormat("#.##");
-        String formattedResult = df.format(result);
+        String formattedResult = result.setScale(2, RoundingMode.HALF_UP).toString();
 
         // Retourner la valeur formatée en tant que double
         return Double.parseDouble(formattedResult);
@@ -213,6 +223,9 @@ public class PlayActivity extends AppCompatActivity {
                     finish();
                     break;
                 default:
+                    Intent intent2 = new Intent(PlayActivity.this, MainActivity.class);
+                    startActivity(intent2);
+                    finish();
             }
             lifePoint--;
         }
