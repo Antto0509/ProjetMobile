@@ -206,13 +206,13 @@ public class PlayActivity extends AppCompatActivity {
                     break;
                 case 1:
                     image_heart1.setVisibility(View.INVISIBLE);
-                    break;
-                case 0:
-                    // AFFICHER ICI MESSAGE DE FIN DE PARTIE ET ENREGISTRER SCORE EN BD
-                    saveScoreToDatabase();
+                    saveToDatabase();
+                    // Redirection vers ScoreActivity
+                    Intent intent = new Intent(PlayActivity.this, ScoreActivity.class);
+                    startActivity(intent);
+                    finish();
                     break;
                 default:
-
             }
             lifePoint--;
         }
@@ -226,7 +226,7 @@ public class PlayActivity extends AppCompatActivity {
         deleteCalculation();
     }
 
-    private void saveScoreToDatabase() {
+    private void saveToDatabase() {
         // Création un objet Score avec le pseudo de l'utilisateur et le score actuel
         Score scoreEntity = new Score();
         scoreEntity.setPseudo("Player");
@@ -234,11 +234,6 @@ public class PlayActivity extends AppCompatActivity {
 
         // Insérer le score dans la base de données
         scoreDao.create(scoreEntity);
-
-        // Redirection vers ScoreActivity
-        Intent intent = new Intent(PlayActivity.this, ScoreActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     /*
