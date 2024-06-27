@@ -55,12 +55,23 @@ public class ScoreActivity extends AppCompatActivity {
     @NonNull
     private StringBuilder getStringBuilder() {
         StringBuilder scoresList = new StringBuilder();
+        String[] medaillons = {"🥇", "🥈", "🥉", ""};
+        String scoresFormat;
         Integer i = 1;
         if (scoreDao.getScores().isEmpty()) {
             scoresList.append("Aucun score enregistré");
         } else {
             for (Score score : scoreDao.getScores()) {
-                String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n\n";
+                if (i == 1) {
+                    scoresFormat = "🥇 ";
+                } else if (i == 2) {
+                    scoresFormat = "🥈 ";
+                } else if (i == 3) {
+                    scoresFormat = "🥉 ";
+                } else {
+                    scoresFormat = "";
+                }
+                scoresFormat += i + ". " + score.getPseudo() + " : " + score.getScore() + " points\n\n";
                 scoresList.append(scoresFormat);
                 i++;
             }

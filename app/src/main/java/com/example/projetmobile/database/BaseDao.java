@@ -87,7 +87,7 @@ public abstract class BaseDao<T extends BaseEntity> {
                 null,
                 null,
                 null,
-                null
+                "score desc"
         );
 
         List items = new ArrayList<T>();
