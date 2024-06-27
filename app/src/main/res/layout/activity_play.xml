@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".PlayActivity">
 
     <LinearLayout
@@ -27,7 +28,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30px"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:orientation="horizontal"
                 android:paddingTop="50dp">
 
@@ -67,16 +69,17 @@
                         android:layout_weight="2"
                         android:text="@string/ScoreText"
                         android:textAlignment="viewEnd"
+                        android:textColor="@color/white"
                         android:textSize="32sp" />
 
                     <TextView
                         android:id="@+id/textView_ScoreValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30px"
                         android:layout_weight="1"
                         android:text="@string/ScoreValue"
                         android:textAlignment="center"
+                        android:textColor="@color/white"
                         android:textSize="32sp" />
                 </LinearLayout>
 
@@ -86,11 +89,12 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="35px"
-                android:layout_marginTop="60px"
-                android:layout_marginRight="35px"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
                 android:text="@string/CalculationAccuracy"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -108,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="34sp" />
 
             <TextView
@@ -115,7 +120,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40sp"
+                android:background="@drawable/border"
+                android:padding="59dp"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -136,22 +144,25 @@
                     android:id="@+id/btn_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_7"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_7" />
 
                 <Button
                     android:id="@+id/btn_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_8"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_8" />
 
                 <Button
                     android:id="@+id/btn_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_9"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_9" />
             </LinearLayout>
 
             <LinearLayout
@@ -164,22 +175,25 @@
                     android:id="@+id/btn_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_4"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_4" />
 
                 <Button
                     android:id="@+id/btn_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_5"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_5" />
 
                 <Button
                     android:id="@+id/btn_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_6"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_6" />
             </LinearLayout>
 
             <LinearLayout
@@ -192,22 +206,25 @@
                     android:id="@+id/btn_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_1"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_1" />
 
                 <Button
                     android:id="@+id/btn_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_2"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_2" />
 
                 <Button
                     android:id="@+id/btn_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/NUMBER_3"
-                    android:layout_weight="1" />
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/NUMBER_3" />
             </LinearLayout>
 
             <LinearLayout
@@ -220,6 +237,7 @@
                     android:id="@+id/btn_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/Delete" />
 
@@ -227,6 +245,7 @@
                     android:id="@+id/btn_0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/NUMBER_0" />
 
@@ -234,6 +253,7 @@
                     android:id="@+id/btn_comma"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/Comma" />
 
@@ -241,6 +261,7 @@
                     android:id="@+id/btn_validate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="@string/Validate" />
             </LinearLayout>
