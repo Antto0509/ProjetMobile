@@ -10,6 +10,8 @@
     <string name="ScoreText" translatable="false">Score:</string>
     <string name="ScoreValue" translatable="false">0</string>
 
+    <string name="CalculationAccuracy">Arrondir les résultats au centième pour les calculs dépassant deux décimales.</string>
+
     <string name="NUMBER_0" translatable="false">0</string>
     <string name="NUMBER_1" translatable="false">1</string>
     <string name="NUMBER_2" translatable="false">2</string>
