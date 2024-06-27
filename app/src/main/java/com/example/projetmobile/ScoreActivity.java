@@ -60,7 +60,7 @@ public class ScoreActivity extends AppCompatActivity {
             scoresList.append("Aucun score enregistré");
         } else {
             for (Score score : scoreDao.getScores()) {
-                String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n";
+                String scoresFormat = "🥇 " + i + ". " + score.getPseudo() + " : " + score.getScore() + " points 🥇\n\n";
                 scoresList.append(scoresFormat);
                 i++;
             }
