@@ -26,6 +26,8 @@ import com.example.projetmobile.database.ScoreDao;
 import com.example.projetmobile.entities.Score;
 
 public class PlayActivity extends AppCompatActivity {
+    // Pseudo saisi par l'utilisateur
+    private String userPseudo;
     // TextView pour le score, les calculs générés et la saisie
     private TextView textViewScoreValue;
     private TextView textViewCalculation;
@@ -72,6 +74,9 @@ public class PlayActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Récupérer le pseudo passé depuis MainActivity
+        userPseudo = getIntent().getStringExtra("pseudo");
 
         textViewScoreValue = findViewById(R.id.textView_ScoreValue);
         textViewCalculation = findViewById(R.id.textView_Calculation);
@@ -264,7 +269,7 @@ public class PlayActivity extends AppCompatActivity {
     private void saveToDatabase() {
         // Création un objet Score avec le pseudo de l'utilisateur et le score actuel
         Score scoreEntity = new Score();
-        scoreEntity.setPseudo("Player");
+        scoreEntity.setPseudo(userPseudo);
         scoreEntity.setScore(score);
 
         // Insérer le score dans la base de données

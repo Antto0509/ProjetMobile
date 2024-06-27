@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    public EditText InputPseudo;
+    private EditText InputPseudo;
     private Button PlayButton;
     private Button ScoreButton;
     private Button AboutButton;
@@ -23,9 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        InputPseudo = findViewById(R.id.InputPseudo);
         PlayButton = findViewById(R.id.PlayButton);
         PlayButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, PlayActivity.class);
+            // Récupérer le pseudo entré dans EditText InputPseudo
+            String pseudo = InputPseudo.getText().toString();
+            // Ajouter le pseudo en tant qu'extra à l'intention
+            intent.putExtra("pseudo", pseudo);
             startActivity(intent);
         });
 
@@ -40,7 +45,5 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         });
-
-        InputPseudo = findViewById(R.id.InputPseudo);
     }
 }
