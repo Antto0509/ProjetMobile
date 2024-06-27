@@ -51,7 +51,7 @@ Ce projet consiste à développer une application mobile sous Android 9.0, offra
 
 1. **Cloner le dépôt** :
    ```sh
-   git clone https://github.com/Antto0509/ProjetMobile ```
+   git clone https://github.com/Antto0509/ProjetMobile
 2. **Ouvrir le projet dans Android Studio.**
 3. **Compiler et exécuter l'application sur un émulateur ou un appareil physique sous Android 9.0.**
 
