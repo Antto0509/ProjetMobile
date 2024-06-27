@@ -58,23 +58,37 @@ public abstract class BaseDao<T extends BaseEntity> {
     public T getBestScore() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select pseudo, score from " + getTableName() + " order by score desc limit 1", null);
+        Cursor cursor = db.query(
+                getTableName(),
+                null,
+                null,
+                null,
+                null,
+                null,
+                "score desc",
+                "1"
+        );
 
-        if (!cursor.moveToFirst()) {
-            return null;
-        }
-
-        T score = this.getEntity(cursor);
+        cursor.moveToFirst();
+        T item = this.getEntity(cursor);
         cursor.close();
 
-        return score;
+        return item;
     }
 
     // Liste des scores
     public List<T> getScores() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select pseudo, score from " + getTableName() + " order by score desc", null);
+        Cursor cursor = db.query(
+                getTableName(),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
 
         List items = new ArrayList<T>();
         while(cursor.moveToNext()) {
