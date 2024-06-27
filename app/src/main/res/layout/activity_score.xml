@@ -44,7 +44,7 @@
             android:text="@string/HighScore"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textListScoreTitle"
@@ -55,7 +55,7 @@
             android:padding="15dp"
             android:text="@string/ListScoreTitle"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="34sp" />
 
         <TextView
             android:id="@+id/textScores"
@@ -67,6 +67,6 @@
             android:text="@string/ActivityScoreText"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
