@@ -232,11 +232,28 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     // Actions à réaliser lors de la validation du calcul
-    private void validateCalculation(){
-        double result = getCalculationResult();
-        CheckAnswer(result);
-        generateCalculation();
-        deleteCalculation();
+    private void validateCalculation() {
+        String userInput = textViewResult.getText().toString().trim();
+
+        // Vérifier si l'entrée utilisateur est un nombre décimal valide
+        if (isValidDecimal(userInput)) {
+            double result = getCalculationResult();
+            CheckAnswer(result);
+            generateCalculation();
+            deleteCalculation();
+        }
+    }
+
+    // Méthode pour valider si une chaîne est un nombre décimal valide
+    private boolean isValidDecimal(String input) {
+        // Vérifier si la chaîne peut être convertie en double
+        try {
+            double number = Double.parseDouble(input);
+            // Vérifier si le nombre est fini (pas infini ou NaN)
+            return Double.isFinite(number);
+        } catch (NumberFormatException e) {
+            return false; // La chaîne n'est pas un nombre valide
+        }
     }
 
     private void saveToDatabase() {
