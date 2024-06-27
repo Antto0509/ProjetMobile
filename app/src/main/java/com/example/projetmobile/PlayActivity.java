@@ -249,6 +249,7 @@ public class PlayActivity extends AppCompatActivity {
         scoreDao.create(scoreEntity);
     }
 
+
     /*
     NOTES PERSO :
     résultat arrondi au centieme près. pour 2.857, res = 2.86
