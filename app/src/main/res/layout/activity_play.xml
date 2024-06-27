@@ -120,8 +120,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40sp"
-                android:background="@drawable/border"
-                android:padding="59dp"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />

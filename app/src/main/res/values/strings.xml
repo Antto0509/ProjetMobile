@@ -42,7 +42,9 @@ f
     <string name="AboutText">Cette application a été réalisée par Antoine COUTREEL et Antoine PISSON dans le cadre d\'un projet de développement mobile. Elle a pour but de proposer un jeu de calcul mental.</string>
     <string name="AboutText2">Tous droits réservés. Version 1.0 – 2024</string>
     <string name="AboutTitleFeature">Liste des fonctionnalités</string>
-    <string name="AboutTextFeature">- Jeu de calcul mental</string>
-    <string name="AboutTextFeature2">- Score</string>
+    <string name="AboutTextFeature">- Multilingue (FR + EN).</string>
+    <string name="AboutTextFeature2">- Interface utilisateur simple et intuitive.</string>
+    <string name="AboutTextFeature3">- Jeu de calcul mental</string>
+    <string name="AboutTextFeature4">- Liste des scores</string>
 
 </resources>
