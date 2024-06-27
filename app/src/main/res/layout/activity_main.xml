@@ -34,7 +34,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Player1"
+            android:maxLength="12"
+            android:text="@string/PseudoName"
             android:textColor="#FFFFFF" />
 
         <Button

@@ -26,12 +26,24 @@ public class MainActivity extends AppCompatActivity {
         InputPseudo = findViewById(R.id.InputPseudo);
         PlayButton = findViewById(R.id.PlayButton);
         PlayButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PlayActivity.class);
             // Récupérer le pseudo entré dans EditText InputPseudo
-            String pseudo = InputPseudo.getText().toString();
-            // Ajouter le pseudo en tant qu'extra à l'intention
-            intent.putExtra("pseudo", pseudo);
-            startActivity(intent);
+            String pseudo = InputPseudo.getText().toString().trim();
+
+            // Vérifier la longueur du pseudo
+            if (pseudo.length() > 12) {
+                // Afficher un message d'erreur si le pseudo est trop long
+                InputPseudo.setError("Pseudo trop long, maximum 12 caractères");
+            } else {
+                if (pseudo.length() < 3) {
+                    // Afficher un message d'erreur si le pseudo est trop long
+                    InputPseudo.setError("Pseudo trop court, minimum 3 caractères");
+                }else{
+                    // Si la taille est acceptable, démarrer PlayActivity
+                    Intent intent = new Intent(MainActivity.this, PlayActivity.class);
+                    intent.putExtra("pseudo", pseudo);
+                    startActivity(intent);
+                }
+            }
         });
 
         ScoreButton = findViewById(R.id.ScoreButton);

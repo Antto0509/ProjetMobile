@@ -3,7 +3,7 @@
     <string name="app_name">ProjectMobile</string>
 
     <!-- activity_main -->
-    <string name="PseudoName">Player1:</string>
+    <string name="PseudoName">Player1</string>
 
     <string name="PlayButton">Play</string>
     <string name="ScoreButton">Score</string>

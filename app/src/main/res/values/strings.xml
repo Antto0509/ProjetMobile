@@ -3,8 +3,8 @@
 
     <!-- activity_main -->
     <string name="Pseudo" translatable="false">Pseudo:</string>
-    <string name="PseudoName">Joueur1:</string>
-
+    <string name="PseudoName">Joueur1</string>
+f
     <string name="PlayButton">Jouer</string>
     <string name="ScoreButton">Score</string>
     <string name="AboutButton">A propos</string>
