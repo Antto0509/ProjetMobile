@@ -11,11 +11,31 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20px"
+        android:background="@color/grey_transparent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:text="@string/Pseudo"
+            android:textColor="#E1EEFB"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/InputPseudo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Player1"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/PlayButton"
@@ -41,4 +61,5 @@
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,11 @@
     <string name="app_name">ProjectMobile</string>
 
     <!-- activity_main -->
+    <string name="PseudoName">Player1:</string>
+
     <string name="PlayButton">Play</string>
     <string name="ScoreButton">Score</string>
+    <string name="AboutButton">About</string>
 
     <!-- activity_play -->
     <string name="CalculationAccuracy">Round results to the nearest hundredth for calculations exceeding two decimal places.</string>
@@ -14,7 +17,6 @@
     <string name="ListScoreTitle">List of scores</string>
 
     <!-- activity_about -->
-    <string name="AboutButton">About</string>
     <string name="AboutTitle">About</string>
     <string name="AboutText">This application was created by Antoine COUTREEL and Antoine PISSON as part of a mobile development project.</string>
     <string name="AboutTitleFeature">List of features</string>
