@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -47,6 +48,12 @@ public class ScoreActivity extends AppCompatActivity {
         }
 
         // On récupère la liste des scores
+        StringBuilder scoresList = getStringBuilder();
+        scores.setText(scoresList.toString());
+    }
+
+    @NonNull
+    private StringBuilder getStringBuilder() {
         StringBuilder scoresList = new StringBuilder();
         Integer i = 1;
         if (scoreDao.getScores().isEmpty()) {
@@ -58,6 +65,6 @@ public class ScoreActivity extends AppCompatActivity {
                 i++;
             }
         }
-        scores.setText(scoresList.toString());
+        return scoresList;
     }
 }
