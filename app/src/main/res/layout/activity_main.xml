@@ -11,8 +11,6 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20px"
-        android:background="@color/grey_transparent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,22 +19,28 @@
 
         <TextView
             android:id="@+id/Title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40px"
+            android:background="@color/grey_transparent"
+            android:padding="15dp"
             android:text="@string/Pseudo"
-            android:textColor="#E1EEFB"
-            android:textSize="30sp" />
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/InputPseudo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:ems="10"
+            android:importantForAutofill="no"
             android:inputType="text"
             android:maxLength="12"
+            android:padding="15dp"
             android:text="@string/PseudoName"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/white"
+            tools:ignore="LabelFor" />
 
         <Button
             android:id="@+id/PlayButton"
