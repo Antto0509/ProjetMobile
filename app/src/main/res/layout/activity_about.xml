@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/blue"
     tools:context=".AboutActivity">
 
     <LinearLayout
@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="@color/grey_transparent"
             android:padding="5dp"
             android:text="@string/AboutTitle"
             android:textAlignment="center"
@@ -37,19 +36,28 @@
             android:id="@+id/textViewPres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@color/grey_transparent"
             android:padding="15dp"
             android:text="@string/AboutText"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewPres2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:padding="15dp"
+            android:text="@string/AboutText2"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textViewTitleFeature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="@color/grey_transparent"
             android:padding="15dp"
             android:text="@string/AboutTitleFeature"
             android:textColor="@color/white"
@@ -59,7 +67,6 @@
             android:id="@+id/textViewFeature1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/grey_transparent"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/AboutTextFeature"
@@ -71,7 +78,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="@color/grey_transparent"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/AboutTextFeature2"

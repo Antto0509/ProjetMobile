@@ -18,7 +18,8 @@
 
     <!-- activity_about -->
     <string name="AboutTitle">About</string>
-    <string name="AboutText">This application was created by Antoine COUTREEL and Antoine PISSON as part of a mobile development project.</string>
+    <string name="AboutText">This application was created by Antoine COUTREEL and Antoine PISSON as part of a mobile development project. It aims to offer a mental calculation game.</string>
+    <string name="AboutText2">All rights reserved. Version 1.0 – 2024</string>
     <string name="AboutTitleFeature">List of features</string>
     <string name="AboutTextFeature">- Mental calculation game</string>
     <string name="AboutTextFeature2">- Score</string>
