@@ -21,7 +21,6 @@
             android:id="@+id/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
             android:text="@string/Pseudo"
             android:textColor="@color/white"
             android:textSize="24sp"
