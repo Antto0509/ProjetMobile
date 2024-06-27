@@ -17,8 +17,9 @@ import java.text.DecimalFormat;
 
 import android.view.View;
 
-import android.os.Handler;
-import android.os.Looper;
+import com.example.projetmobile.database.ScoreBaseHelper;
+import com.example.projetmobile.database.ScoreDao;
+import com.example.projetmobile.entities.Score;
 
 public class PlayActivity extends AppCompatActivity {
     // TextView pour le score, les calculs générés et la saisie
@@ -55,6 +56,7 @@ public class PlayActivity extends AppCompatActivity {
     private ImageView image_heart2;
     private ImageView image_heart3;
 
+    private ScoreDao scoreDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,8 @@ public class PlayActivity extends AppCompatActivity {
 
         generateCalculation();
         updateValidationButtonState();
+
+        scoreDao = new ScoreDao(new ScoreBaseHelper(this, "db", 1));
     }
 
     // Désactiver le bouton de validation si aucun résultat n'est saisi
@@ -181,7 +185,7 @@ public class PlayActivity extends AppCompatActivity {
         return Double.parseDouble(formattedResult);
     }
 
-    // Vérifier l
+    // Vérifier si la réponse est correcte
     private void CheckAnswer(double result){
         String userInput = textViewResult.getText().toString().trim();
         double userResult = Double.parseDouble(userInput);
@@ -204,6 +208,7 @@ public class PlayActivity extends AppCompatActivity {
                     break;
                 default:
                     // AFFICHER ICI MESSAGE DE FIN DE PARTIE ET ENREGISTRER SCORE EN BD
+                    saveScoreToDatabase();
             }
             lifePoint--;
         }
@@ -217,11 +222,27 @@ public class PlayActivity extends AppCompatActivity {
         deleteCalculation();
     }
 
+    private void saveScoreToDatabase() {
+        // Créer un objet Score avec le pseudo de l'utilisateur et le score actuel
+        Score scoreEntity = new Score();
+        scoreEntity.setPseudo("Player"); // Remplacez par la méthode pour obtenir le pseudo de l'utilisateur
+        scoreEntity.setScore(score);
+
+        // Insérer le score dans la base de données
+        scoreDao.create(scoreEntity);
+
+        // Afficher un message ou rediriger vers une autre activité si nécessaire
+        // Par exemple :
+        // Toast.makeText(this, "Game Over! Score saved.", Toast.LENGTH_SHORT).show();
+        // Intent intent = new Intent(this, GameOverActivity.class);
+        // startActivity(intent);
+        // finish();
+    }
+
     /*
     NOTES PERSO :
     RAF :
-    - VERIFIER SI LA CALCUL USER = BON RESULTAT
-    - CHANGER DE CALCUL
+    - stocker score en BD (variable int score)
 
     résultat arrondi au centieme près. pour 2.857, res = 2.86
      */
