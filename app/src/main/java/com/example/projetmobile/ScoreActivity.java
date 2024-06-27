@@ -55,7 +55,6 @@ public class ScoreActivity extends AppCompatActivity {
     @NonNull
     private StringBuilder getStringBuilder() {
         StringBuilder scoresList = new StringBuilder();
-        String[] medaillons = {"🥇", "🥈", "🥉", ""};
         String scoresFormat;
         Integer i = 1;
         if (scoreDao.getScores().isEmpty()) {
