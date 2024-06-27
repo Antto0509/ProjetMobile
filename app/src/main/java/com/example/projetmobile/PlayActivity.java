@@ -238,9 +238,6 @@ public class PlayActivity extends AppCompatActivity {
 
     /*
     NOTES PERSO :
-    RAF :
-    - stocker score en BD (variable int score)
-
     résultat arrondi au centieme près. pour 2.857, res = 2.86
      */
 }
